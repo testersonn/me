@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>roullete</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid;
+            padding: 15px;
+        }
+
+        .green {
+            background-color: green;
+            color: white;
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+        }
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="draw_id">Draw ID - </h1>
+    <table>
+        <tr>
+            <td></td>
+            <td class="green" id="134">ZERO SPIEL</td>
+            <td class="green" id="136">ORPHELINS</td>
+            <td class="green" id="137">TIERS</td>
+            <td class="green" id="135">VOISINS</td>
+            <td class="green" id="128">EVEN</td>
+            <td class="green" id="129">ODD</td>
+            <td class="black" id="131">BLACK</td>
+            <td class="red" id="130">RED</td>
+            <td class="green" id="132">LOW</td>
+            <td class="green" id="133">HIGH</td>
+        </tr>
+        <tr>
+            <td class="green"></td>
+            <td class="red" id="4">3</td>
+            <td class="black" id="7">6</td>
+            <td class="red" id="10">9</td>
+            <td class="red" id="13">12</td>
+            <td class="black" id="16">15</td>
+            <td class="red" id="19">18</td>
+            <td class="red" id="22">21</td>
+            <td class="black" id="25">24</td>
+            <td class="red" id="28">27</td>
+            <td class="red" id="31">30</td>
+            <td class="black" id="34">33</td>
+            <td class="red" id="37">36</td>
+            <td class="green" id="127">C1</td>
+        </tr>
+        <tr>
+            <td id="1" class="green">0</td>
+            <td class="black" id="3">2</td>
+            <td class="red" id="6">5</td>
+            <td class="black" id="9">8</td>
+            <td class="black" id="12">11</td>
+            <td class="red" id="15">14</td>
+            <td class="black" id="18">17</td>
+            <td class="black" id="21">20</td>
+            <td class="red" id="24">23</td>
+            <td class="black" id="27">26</td>
+            <td class="black" id="30">29</td>
+            <td class="red" id="33">32</td>
+            <td class="black" id="36">35</td>
+            <td class="green" id="126">C2</td>
+        </tr>
+        <tr>
+            <td class="green"></td>
+            <td class="red" id="2">1</td>
+            <td class="black" id="5">4</td>
+            <td class="red" id="8">7</td>
+            <td class="black" id="11">10</td>
+            <td class="black" id="14">13</td>
+            <td class="red" id="17">16</td>
+            <td class="red" id="20">19</td>
+            <td class="black" id="23">22</td>
+            <td class="red" id="26">25</td>
+            <td class="black" id="29">28</td>
+            <td class="black" id="32">31</td>
+            <td class="red" id="35">34</td>
+            <td class="green" id="125">C3</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="green"></td>
+            <td class="green" id="122">BLOCK 1</td>
+            <td class="green"></td>
+            <td class="green"></td>
+            <td class="green"></td>
+            <td class="green" id="123">BLOCK 2</td>
+            <td class="green"></td>
+            <td class="green"></td>
+            <td class="green"></td>
+            <td class="green" id="124">BLOCK 3</td>
+            <td class="green"></td>
+            <td class="green"></td>
+        </tr>
+    </table>
+
+    <h2 id="total_red">Total red TS: </h2>
+    <h2 id="total_black">Total black TS: </h2>
+
+    <img src="wheel.png" style="  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%; margin-top: -7%;" alt="wheel">
+
+    <script src="index.js"></script>
+</body>
+
+</html>
