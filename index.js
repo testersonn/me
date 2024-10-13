@@ -1,4 +1,17 @@
-draw_id = 3971202
+const requestOptions = {
+    method: "POST",
+    redirect: "follow"
+};
+
+fetch("https://suribet.sr/VirtualRoulette/GetActiveDrawsInfo", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+
+
+
+
+draw_id = 3975218
 
 document.getElementById("draw_id").innerHTML = `Draw ID - ${draw_id}`
 
