@@ -1,6 +1,8 @@
 const requestOptions = {
     method: "POST",
-    redirect: "follow"
+    redirect: "follow",
+    body: JSON.stringify(""),
+    mode: "no-cors"
 };
 
 fetch("https://suribet.sr/VirtualRoulette/GetActiveDrawsInfo", requestOptions)
@@ -11,7 +13,7 @@ fetch("https://suribet.sr/VirtualRoulette/GetActiveDrawsInfo", requestOptions)
 
 
 
-draw_id = 3975218
+draw_id = 3976745
 
 document.getElementById("draw_id").innerHTML = `Draw ID - ${draw_id}`
 
@@ -33,43 +35,10 @@ setInterval(() => {
 
             // Set the text of the slots
             if (data.length > 1) {
-                document.getElementById("1").innerHTML = `0 - ${data[0]["Ts"] == 5000 && !data[0]["IsSoldOut"] ? 0 : data[0]["Ts"]}`
-                document.getElementById("2").innerHTML = `1 - ${data[1]["Ts"] == 5000 && !data[1]["IsSoldOut"] ? 0 : data[1]["Ts"]}`
-                document.getElementById("3").innerHTML = `2 - ${data[2]["Ts"] == 5000 && !data[2]["IsSoldOut"] ? 0 : data[2]["Ts"]}`
-                document.getElementById("4").innerHTML = `3 - ${data[3]["Ts"] == 5000 && !data[3]["IsSoldOut"] ? 0 : data[3]["Ts"]}`
-                document.getElementById("5").innerHTML = `4 - ${data[4]["Ts"] == 5000 && !data[4]["IsSoldOut"] ? 0 : data[4]["Ts"]}`
-                document.getElementById("6").innerHTML = `5 - ${data[5]["Ts"] == 5000 && !data[5]["IsSoldOut"] ? 0 : data[5]["Ts"]}`
-                document.getElementById("7").innerHTML = `6 - ${data[6]["Ts"] == 5000 && !data[6]["IsSoldOut"] ? 0 : data[6]["Ts"]}`
-                document.getElementById("8").innerHTML = `7 - ${data[7]["Ts"] == 5000 && !data[7]["IsSoldOut"] ? 0 : data[7]["Ts"]}`
-                document.getElementById("9").innerHTML = `8 - ${data[8]["Ts"] == 5000 && !data[8]["IsSoldOut"] ? 0 : data[8]["Ts"]}`
-                document.getElementById("10").innerHTML = `9 - ${data[9]["Ts"] == 5000 && !data[9]["IsSoldOut"] ? 0 : data[9]["Ts"]}`
-                document.getElementById("11").innerHTML = `10 - ${data[10]["Ts"] == 5000 && !data[10]["IsSoldOut"] ? 0 : data[10]["Ts"]}`
-                document.getElementById("12").innerHTML = `11 - ${data[11]["Ts"] == 5000 && !data[11]["IsSoldOut"] ? 0 : data[11]["Ts"]}`
-                document.getElementById("13").innerHTML = `12 - ${data[12]["Ts"] == 5000 && !data[12]["IsSoldOut"] ? 0 : data[12]["Ts"]}`
-                document.getElementById("14").innerHTML = `13 - ${data[13]["Ts"] == 5000 && !data[13]["IsSoldOut"] ? 0 : data[13]["Ts"]}`
-                document.getElementById("15").innerHTML = `14 - ${data[14]["Ts"] == 5000 && !data[14]["IsSoldOut"] ? 0 : data[14]["Ts"]}`
-                document.getElementById("16").innerHTML = `15 - ${data[15]["Ts"] == 5000 && !data[15]["IsSoldOut"] ? 0 : data[15]["Ts"]}`
-                document.getElementById("17").innerHTML = `16 - ${data[16]["Ts"] == 5000 && !data[16]["IsSoldOut"] ? 0 : data[16]["Ts"]}`
-                document.getElementById("18").innerHTML = `17 - ${data[17]["Ts"] == 5000 && !data[17]["IsSoldOut"] ? 0 : data[17]["Ts"]}`
-                document.getElementById("19").innerHTML = `18 - ${data[18]["Ts"] == 5000 && !data[18]["IsSoldOut"] ? 0 : data[18]["Ts"]}`
-                document.getElementById("20").innerHTML = `19 - ${data[19]["Ts"] == 5000 && !data[19]["IsSoldOut"] ? 0 : data[19]["Ts"]}`
-                document.getElementById("21").innerHTML = `20 - ${data[20]["Ts"] == 5000 && !data[20]["IsSoldOut"] ? 0 : data[20]["Ts"]}`
-                document.getElementById("22").innerHTML = `21 - ${data[21]["Ts"] == 5000 && !data[21]["IsSoldOut"] ? 0 : data[21]["Ts"]}`
-                document.getElementById("23").innerHTML = `22 - ${data[22]["Ts"] == 5000 && !data[22]["IsSoldOut"] ? 0 : data[22]["Ts"]}`
-                document.getElementById("24").innerHTML = `23 - ${data[23]["Ts"] == 5000 && !data[23]["IsSoldOut"] ? 0 : data[23]["Ts"]}`
-                document.getElementById("25").innerHTML = `24 - ${data[24]["Ts"] == 5000 && !data[24]["IsSoldOut"] ? 0 : data[24]["Ts"]}`
-                document.getElementById("26").innerHTML = `25 - ${data[25]["Ts"] == 5000 && !data[25]["IsSoldOut"] ? 0 : data[25]["Ts"]}`
-                document.getElementById("27").innerHTML = `26 - ${data[26]["Ts"] == 5000 && !data[26]["IsSoldOut"] ? 0 : data[26]["Ts"]}`
-                document.getElementById("28").innerHTML = `27 - ${data[27]["Ts"] == 5000 && !data[27]["IsSoldOut"] ? 0 : data[27]["Ts"]}`
-                document.getElementById("29").innerHTML = `28 - ${data[28]["Ts"] == 5000 && !data[28]["IsSoldOut"] ? 0 : data[28]["Ts"]}`
-                document.getElementById("30").innerHTML = `29 - ${data[29]["Ts"] == 5000 && !data[29]["IsSoldOut"] ? 0 : data[29]["Ts"]}`
-                document.getElementById("31").innerHTML = `30 - ${data[30]["Ts"] == 5000 && !data[30]["IsSoldOut"] ? 0 : data[30]["Ts"]}`
-                document.getElementById("32").innerHTML = `31 - ${data[31]["Ts"] == 5000 && !data[31]["IsSoldOut"] ? 0 : data[31]["Ts"]}`
-                document.getElementById("33").innerHTML = `32 - ${data[32]["Ts"] == 5000 && !data[32]["IsSoldOut"] ? 0 : data[32]["Ts"]}`
-                document.getElementById("34").innerHTML = `33 - ${data[33]["Ts"] == 5000 && !data[33]["IsSoldOut"] ? 0 : data[33]["Ts"]}`
-                document.getElementById("35").innerHTML = `34 - ${data[34]["Ts"] == 5000 && !data[34]["IsSoldOut"] ? 0 : data[34]["Ts"]}`
-                document.getElementById("36").innerHTML = `35 - ${data[35]["Ts"] == 5000 && !data[35]["IsSoldOut"] ? 0 : data[35]["Ts"]}`
-                document.getElementById("37").innerHTML = `36 - ${data[36]["Ts"] == 5000 && !data[36]["IsSoldOut"] ? 0 : data[36]["Ts"]}`
+                // numbers
+                for (let i = 0; i < 37; i++) {
+                    document.getElementById(`${i + 1}`).innerHTML = `${i} - ${data[i]["Ts"] == 5000 && !data[i]["IsSoldOut"] ? 0 : data[i]["Ts"]}`
+                }
 
                 // blocks
                 document.getElementById("122").innerHTML = `BLOCK 1 - ${data[121]["Ts"] == 5000 && !data[121]["IsSoldOut"] ? 0 : data[121]["Ts"]}`
