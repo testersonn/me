@@ -15,7 +15,12 @@ fetch("https://suribet.sr/VirtualRoulette/GetActiveDrawsInfo", {
         document.getElementById("draw_number").innerHTML = `Draw #: ${draw_number}`
     })
 
-
+if (draw_id == 0) {
+    draw_id = prompt("Fill in draw id")
+    draw_number = prompt("Fill in draw number")
+    document.getElementById("draw_id").innerHTML = `Draw ID: ${draw_id}`
+    document.getElementById("draw_number").innerHTML = `Draw #: ${draw_number}`
+}
 
 setInterval(() => {
     fetch("https://roulette.suribet.sr:8443/VirtualRouletteWebsiteApi/Api/RouletteWebsite/GetDrawParameters", {
