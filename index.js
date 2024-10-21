@@ -1,21 +1,21 @@
-const requestOptions = {
+// init draw id
+draw_id = 0
+draw_number = 0
+
+// fetch latest draw id
+fetch("https://suribet.sr/VirtualRoulette/GetActiveDrawsInfo", {
     method: "POST",
-    redirect: "follow",
-    body: JSON.stringify(""),
-    mode: "no-cors"
-};
+})
+    .then((response) => response.json())
+    .then(function (data) {
+        draw_id = data["ActiveDrawsInfo"][0]["DI"]
+        draw_number = data["ActiveDrawsInfo"][0]["Dn"]
 
-fetch("https://suribet.sr/VirtualRoulette/GetActiveDrawsInfo", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.error(error));
-
-
+        document.getElementById("draw_id").innerHTML = `Draw ID: ${draw_id}`
+        document.getElementById("draw_number").innerHTML = `Draw #: ${draw_number}`
+    })
 
 
-draw_id = 3976745
-
-document.getElementById("draw_id").innerHTML = `Draw ID - ${draw_id}`
 
 setInterval(() => {
     fetch("https://roulette.suribet.sr:8443/VirtualRouletteWebsiteApi/Api/RouletteWebsite/GetDrawParameters", {
@@ -29,7 +29,9 @@ setInterval(() => {
         .then(function (data) {
             if (data.length == 0) {
                 draw_id++
+                draw_number++
                 document.getElementById("draw_id").innerHTML = `Draw ID - ${draw_id}`
+                document.getElementById("draw_number").innerHTML = `Draw #: ${draw_number}`
             }
 
 
