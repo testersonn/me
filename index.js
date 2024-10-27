@@ -1,6 +1,7 @@
 // init draw id
 draw_id = 0
 draw_number = 0
+min_treshold = 0
 
 // fetch latest draw id
 fetch("https://suribet.sr/VirtualRoulette/GetActiveDrawsInfo", {
@@ -18,6 +19,7 @@ fetch("https://suribet.sr/VirtualRoulette/GetActiveDrawsInfo", {
 if (draw_id == 0) {
     draw_id = prompt("Fill in draw id")
     draw_number = prompt("Fill in draw number")
+    min_treshold = prompt("Fill in minimum treshold")
     document.getElementById("draw_id").innerHTML = `Draw ID: ${draw_id}`
     document.getElementById("draw_number").innerHTML = `Draw #: ${draw_number}`
 }
@@ -45,7 +47,7 @@ setInterval(() => {
                 // numbers
                 for (let i = 0; i < 37; i++) {
                     document.getElementById(`${i + 1}`).innerHTML = `${i} - ${data[i]["Ts"] == 5000 && !data[i]["IsSoldOut"] ? 0 : data[i]["Ts"]}`
-                    if (data[i]["Ts"] >= 300) {
+                    if (data[i]["Ts"] >= min_treshold) {
                         document.getElementById(`${i + 1}`).classList.add("highlight")
                     }
                 }
