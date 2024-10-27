@@ -45,6 +45,9 @@ setInterval(() => {
                 // numbers
                 for (let i = 0; i < 37; i++) {
                     document.getElementById(`${i + 1}`).innerHTML = `${i} - ${data[i]["Ts"] == 5000 && !data[i]["IsSoldOut"] ? 0 : data[i]["Ts"]}`
+                    if (data[i]["Ts"] >= 300) {
+                        document.getElementById(`${i + 1}`).classList.add("highlight")
+                    }
                 }
 
                 // blocks
