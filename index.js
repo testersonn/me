@@ -47,8 +47,14 @@ setInterval(() => {
                 // numbers
                 for (let i = 0; i < 37; i++) {
                     document.getElementById(`${i + 1}`).innerHTML = `${i} - ${data[i]["Ts"] == 5000 && !data[i]["IsSoldOut"] ? 0 : data[i]["Ts"]}`
-                    if (data[i]["Ts"] >= min_treshold) {
+                    if (data[i]["Ts"] == 5000 && !data[i]["IsSoldOut"]) {
+                        document.getElementById(`${i + 1}`).classList.remove("highlight")
+                    }
+                    else if (data[i]["Ts"] >= min_treshold) {
                         document.getElementById(`${i + 1}`).classList.add("highlight")
+                    }
+                    else {
+                        document.getElementById(`${i + 1}`).classList.remove("highlight")
                     }
                 }
 
